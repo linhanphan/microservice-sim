@@ -1,0 +1,97 @@
+services:
+  frontend:
+    build: ./microservice
+    container_name: frontend
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=frontend
+    ports:
+      - "5000"
+
+  backend1:
+    build: ./microservice
+    container_name: backend1
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend1
+
+  backend2:
+    build: ./microservice
+    container_name: backend2
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend2
+
+  backend3:
+    build: ./microservice
+    container_name: backend3
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend3
+
+  backend4:
+    build: ./microservice
+    container_name: backend4
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend4
+
+  backend5:
+    build: ./microservice
+    container_name: backend5
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend5
+
+  backend6:
+    build: ./microservice
+    container_name: backend6
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend6
+
+  backend7:
+    build: ./microservice
+    container_name: backend7
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend7
+
+  backend8:
+    build: ./microservice
+    container_name: backend8
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend8
+
+  backend9:
+    build: ./microservice
+    container_name: backend9
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend9
+
+  backend10:
+    build: ./microservice
+    container_name: backend10
+    environment:
+      - MAX_HOPS=5
+      - SERVICE_NAME=backend10
+
+  client:
+    build: ./client
+    container_name: client
+    depends_on:
+      - frontend
+      - backend1
+      - backend2
+      - backend3
+      - backend4
+      - backend5
+      - backend6
+      - backend7
+      - backend8
+      - backend9
+      - backend10
+    environment:
+      - MAX_USER=2
